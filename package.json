@@ -1,11 +1,21 @@
 {
-  "name": "basics",
+  "name": "express",
   "version": "1.0.0",
-  "description": "NodeTraining",
-  "main": "main.js",
+  "description": "Express tutorial",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server",
+    "dev": "nodemon server"
   },
-  "author": "Ravi",
-  "license": "ISC"
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "date-fns": "^2.23.0",
+    "express": "^4.17.1",
+    "mongodb": "^6.8.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
 }
