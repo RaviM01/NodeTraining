@@ -1,0 +1,128 @@
+openapi: 3.0.3
+info:
+  description: Employee Service API
+  title:  Employee Service  API
+  version: 1.0.0
+servers:
+  - description: Dev server
+    url: http://localhost:8000/
+paths:
+  /employees:
+    get:
+      summary: Get All Employee Details
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Employee'
+  /employee:
+    post:
+      summary: Create Employee Details
+      requestBody:
+        description: Employee Details
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Employee'
+  /employee/{id}:
+    get:
+      summary: Get Specific Employee Details
+      parameters:
+        - name: id
+          in: path
+          description: ID of the employee
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Employee'
+    delete:
+      summary: Delete Specific Employee Details
+      parameters:
+        - name: id
+          in: path
+          description: ID of the employee
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Employee'
+    put:
+      summary: Modify Specific Employee Details
+      parameters:
+        - name: id
+          in: path
+          description: ID of the employee
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        description: Employee Details
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Employee'
+
+components:
+  schemas:
+    Employee:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        department:
+          type: string
+        designation:
+          type: string
+        address:
+          type:  object
+          $ref: '#/components/schemas/Employee'
+    Address:
+      type: object
+      properties:
+        city:
+          type: string
+        state:
+          type: string
+        country:
+          type: string
