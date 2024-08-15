@@ -1,7 +1,7 @@
 1. Set up a project EmployeeService
 2. add dependencies express, mongodb
 3. Define Routes: 
-   GET - /empoyee
+   GET - /empoyees
    GET - /employee/:id
    POST - /employee
    PUT  - /employee
